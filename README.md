@@ -8,3 +8,6 @@ The repository is organised into three sections:
 *Modeling: files to use with the STAMP 1.01 version release (https://github.com/KatherLab/STAMP/releases/tag/v1.0.1). Installation should not be very different than for the main version.
 
 *Model objects: model objects and scripts for model loading for the different models presented in the manuscript.
+
+
+Each subsection has their own README file to orient the reader.
