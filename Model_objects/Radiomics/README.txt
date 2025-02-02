@@ -1,9 +1,9 @@
 Radiomics models are stored here within .pkl files. 
 Radiomics features (PyRadiomics) are reached via variance filtering, clustering and MRMR selection (Peng et al. 2003) on the cluster representatives.
 .pkl objects are organised as dictionaries with the following key-value schema:
-"Variance_Scaler": 
-"feats_after_variance":
-"Standard_Scaler":
+"Variance_Scaler": Variance scaler object used from SKLearn 
+"feats_after_variance": feature names after variance filtering
+"Standard_Scaler": Standard scaler object from SKLearn
 "Model_object": statsmodels smf.glm model with Binomial family with binary classification (statsmodels == 0.14.2)
 "Out_dataframe": dataframe of features used for model building
 "Out_features": column names of the dataframe, chosen features
