@@ -5,9 +5,9 @@ The repository is organised into three sections:
 
 *data_extraction: contains Python code for extraction of features for 2D, multiview and 3D modeling. Scripts output features into an .h5 format to use as inout for the modeling part of the STAMP package (https://www.nature.com/articles/s41596-024-01047-2).
 
-*Modeling: files to use with the STAMP 1.01 version release (https://github.com/KatherLab/STAMP/releases/tag/v1.0.1). Installation should not be very different than for the main version.
+*STAMP_mods: files to use with the STAMP 1.01 version release (https://github.com/KatherLab/STAMP/releases/tag/v1.0.1). Installation should not be very different than for the main version.
 
-*Model objects: model objects and scripts for model loading for the different models presented in the manuscript.
+*Model objects: model objects and scripts for model loading for the different models presented in the manuscript both MIL and Radiomics.
 
 
 Each subsection has their own README file to orient the reader.
