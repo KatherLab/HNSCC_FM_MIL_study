@@ -69,7 +69,7 @@ def extract_features_2D_(slide_tile_paths, model_name, **kwargs):
     print(device)
     model = model.eval().to(device) #device is needed for the BioMedClip features
    
-    return extract_features_2D_mask(slide_tile_paths=slide_tile_paths, 
+    return extract_features_2D_(slide_tile_paths=slide_tile_paths, 
                                     seg_paths=slide_tile_paths, device=device,
                                     model=model, model_name=model_name,
                                     toknzer=tokenizer, **kwargs)
