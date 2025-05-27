@@ -17,7 +17,7 @@ from transforms_2D import AddGaussianNoise, TriChanneler, CenterMassCrop
 from datasets import CT_slice_Grayscale_NIFTIDataset_mask, CT_slice_Grayscale_NIFTIDataset_mask_BioMedClip
 
          
-def extract_features_2D_(
+def extract_features_2D_mask(
         *,
         model, 
         model_name, 
