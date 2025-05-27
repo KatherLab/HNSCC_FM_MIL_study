@@ -1,4 +1,3 @@
-#%%
 import os
 import json
 from typing import Sequence
@@ -12,7 +11,7 @@ import h5py
 import nibabel as nib
 from datasets import CubeFoundation_NiftiDataset
 from transforms_3D import RotateAroundZ, AddGaussianNoise, Grayscale_Norm3d
-#%%
+
 np.random.seed(42) #Use for reproducibility to always pick the same sampling
 
            
