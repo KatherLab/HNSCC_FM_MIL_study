@@ -1,3 +1,4 @@
+#%%
 import os
 import json
 from typing import Sequence
@@ -11,9 +12,6 @@ import h5py
 import nibabel as nib
 from datasets import CubeFoundation_NiftiDataset
 from transforms_3D import RotateAroundZ, AddGaussianNoise, Grayscale_Norm3d
-
-np.random.seed(42) #Use for reproducibility to always pick the same sampling
-
            
 def extract_3Dfeatures_(
         *,
@@ -38,19 +36,22 @@ def extract_3Dfeatures_(
     Args:
         model: model instance from torch from the RadImageNet.py script
         model_name: str, Name of the model used. Either foundation (Aerts) or resnet-50. They have different preprocessing
-        slide_tile_paths: Squence[Paths] A list of paths containing the slide tiles, one per slide.
+        paths: Sequence[Paths] A list of paths containing the path to where the features will be deposited.
+        img_name: str, name of the NIFTI image containing the CT (the .nii.gz termination is not necessary)
+        mask_name: str, name of the NIFTI image containing the ROI segmentation (the .nii.gz termination is not necessary)
+        body_name: str, name of the NIFTI image containing the segmentation of the body (the .nii.gz termination is not necessary)
+        h5_names:Sequence[str], names of the patients in a list from Caller3D
         outdir: Path, Path to save the features to.
         sampling repetitions: int, Number of times to sample for subvolumes around the CoM of the provided mask
-        augmented_repetitions: int, How many additional iterations over the
-            dataset with augmentation should be performed (default=1).
-        augmentations: bool, whether to perform augmentation at all.
-        window: int, minimum for the HU window of the CTs
+        augmented_repetitions: int, How many additional iterations over the 
+        dataset with augmentation should be performed (default=1).
+        augmentations: bool, whether to perform augmentation at all (default=True).
+        min: int, minimum for the HU window of the CTs
         max: int, maximum for the HU window of the CTs
         out_vol: int, volume size fed into the models, default 50 (50x50x50 voxels), others are untested for the foundation model!
-        sampling variance: int, variance to sample the centre of the new points from a multivariate normal in the Dataset
+        sampling variance: int, variance to sample the centre of the new points from a multivariate normal in the Dataset, default: 16
     """
-
-    np.random.seed(42) #Set seed for reproducibility of all numpy distributions
+    np.random.seed(42) #Set seed for reproducibility of all numpy distributions and thus sampling
     assert min<max, "The minimum range value should be smaller than the maximum range value"
 
     #Set parameters according to model specifications; the FM needs that specific range as it is the one it was pretrained on
