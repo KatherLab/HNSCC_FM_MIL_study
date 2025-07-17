@@ -102,9 +102,6 @@ def extract_features_2D_mask(
             im[:,:,-1] = -2048
             im[bod==0] = -2048 
             del bod
-            #######################
-            #Isotropic reconstructions have issues at the last (superior) slide :)
-            #######################
             nonzero_indices = np.nonzero(msk)
             for i in np.unique(nonzero_indices[-1]):
                 if (msk[:,:,i]==1).all() :
