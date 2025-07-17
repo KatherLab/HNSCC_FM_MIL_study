@@ -15,7 +15,7 @@ import argparse
 parser = argparse.ArgumentParser(description="Inputs for the extractors. Make sure all images and segmentations follow LAS orientation!")
 parser.add_argument('--pth', type=str, required=True, help="Path to where the NIFTI images with segmentations are, each folder in the path should be one patient")
 parser.add_argument('--pth_out', type=str, required=True, help = "Output directory where you want the features")
-parser.add_argument("--window", type=int, default=200, required=True, help="Window range for the HU clipping")
+parser.add_argument("--window", type=int, default=120, required=True, help="Window range for the HU clipping")
 parser.add_argument("--level", type=int, default=50, required=True, help="level for the middle point of the HU windowing")
 parser.add_argument("--image",  type=str, required=True, default="image", help="name of the CT NIFTI, must be the same for all patients")
 parser.add_argument("--mask",  type=str, required=True, default="GTV", help="Name of the segmentation in NIFTI format that contains the region of interest")
@@ -83,7 +83,7 @@ extract_features_2D_(slide_tile_paths=pth,
                            model_name= model,    
                                        img_name= image,
                                        mask_name = mask,
-                                       outdir="/mnt/bulk-sirius/asierrabasco/AsierWorkSpace//Surv_Time_pred_project/Marika_Project/New_TIPS_NIFTI_and_Features/Features/BioMedClip/Liver_Parenchyma_Window",
+                                       outdir=outdir,
                                        augmented_repetitions=1,
                                        body_name=body,
                                        level=level,
