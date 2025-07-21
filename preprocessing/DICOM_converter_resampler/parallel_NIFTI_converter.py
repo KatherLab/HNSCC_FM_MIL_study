@@ -12,7 +12,7 @@ import argparse
 #Parser
 ################################################################################
 parser = argparse.ArgumentParser(description="Inputs for the DICOM 2 Nift ti functions. Make sure all images and segmentations follow LAS orientation!")
-parser.add_argument('--pth_csv', type=str, required=True, help="Path to where the NIFTI images with segmentations are, each folder in the path should be one patient")
+parser.add_argument('--pth_csv', type=str, required=True, help="Path to where the images and segmentations are, each folder in the path should be one patient")
 parser.add_argument('--pth_out', type=str, required=True, help = "Output directory where you want the features")
 parser.add_argument("--type_im", type=str, default="DICOM", required=False, help="Type of files that you would like to process; options are DICOM, SEG and RTSTRUCT, default: DICOM")
 parser.add_argument("--n_workers", type=int, default=20, required=False, help="Input the number of CPUs that will be used, default:20")
