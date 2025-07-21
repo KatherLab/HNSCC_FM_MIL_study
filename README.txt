@@ -13,7 +13,12 @@ The repository is organised into three sections:
 Each subsection has their own README file to orient the reader.
 
 *Preprocessing steps:
-*Transform your .dcm files and tumor segmentation masks into NIFTIs in LAS orientation
+*Transform your .dcm files and tumor segmentation masks into NIFTIs in LAS orientation.
 *Resample into 1x1x1 mm voxels
 *Create a body mask with TotalSegmentator
-*Select a model and do feature extraction, wou can select the size of the crop there;  by default the body segmentation will be used to mask elements outside of it and the tumor segmentation masks will be used to select the CT slices containing tumor. The Centre of mass of the segmentation mask is then used as the center for a cropping which is then resized to 224x224 in 2D.
+*Select a model and do feature extraction, you can select the size of the crop there;  by default the body segmentation will be used to mask elements outside of it and the tumor segmentation masks will be used to select the CT slices containing tumor. 
+*The Centre of mass of the segmentation mask is then used as the center for a cropping which is then resized to 224x224 in 2D.
+*The HU are clipped and normalised based on the window and level input on the script; max_HU = level + window/2, min_HU = level - window/2
+
+
+*MIL Models trained in one A100 with CUDA version 12.9
