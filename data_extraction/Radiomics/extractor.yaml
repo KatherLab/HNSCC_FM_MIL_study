@@ -76,7 +76,7 @@ setting:
   binWidth: 32
   weightingNorm: "infinity"
   # first order specific settings:
-  voxelArrayShift: 10  # Minimum value in HU is -1000, shift +1000 to prevent negative values from being squared.
+  voxelArrayShift: 1000  # Minimum value in HU is -1000, shift +1000 to prevent negative values from being squared.
   symmetricalGLCM: True
   gldm_a: 4
   # Misc:
