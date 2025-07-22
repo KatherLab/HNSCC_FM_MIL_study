@@ -1,0 +1,2 @@
+Patient,Image,Mask
+Pat_XXX,/mnt/bulk/asierrabasco/AsierWorkSpace/RADCURE_multimodal/NIFTI_data/data/Pat_XXX/image.nii.gz,/mnt/bulk/asierrabasco/AsierWorkSpace/RADCURE_multimodal/NIFTI_data/data_NIFTI/Pat_XXX/mask_GTVp.nii.gz
